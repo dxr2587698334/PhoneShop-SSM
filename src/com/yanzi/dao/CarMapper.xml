@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.yanzi.dao.CarMapper">
+
+	<insert id="addUserCar" parameterType="com.yanzi.bean.Car">
+		insert into car
+		(cmoney,cname,cimage,gid,uid)
+		values
+		(#{cmoney},#{cname},#{cimage},#{gid},#{uid})
+	</insert>
+
+	<select id="findByIdUserCar" parameterType="com.yanzi.bean.Car"
+		resultType="com.yanzi.bean.Car">
+		select * from car where gid=#{gid} and uid=#{uid}
+	</select>
+	
+	<update id="updateUserCar" parameterType="com.yanzi.bean.Car">
+		update car set cnum=#{cnum} where cid = #{cid}
+	</update>
+	
+	<select id="findAllUserCar" resultType="com.yanzi.bean.Car" 
+	parameterType="com.yanzi.bean.Car">
+		select * from car where uid=#{uid}
+	</select>
+	
+	<!-- 批量删除 -->
+	<delete id="delAllUserCar" parameterType="string">
+		delete from car where cid in
+		<foreach item="cid" index="index" collection="arr" open="(" separator="," close=")">
+			#{cid}
+		</foreach>
+	</delete>
+	
+	<!-- 删除 -->
+	<delete id="delUserCar" parameterType="int">
+		delete from car where cid  =#{cid}
+	</delete>
+	
+	<select id="findReadyOrders" resultType="com.yanzi.bean.Car" parameterType="string">
+		select * from car where cid in
+		<foreach item="cid" index="index" collection="arr" open="(" separator="," close=")">
+			#{cid}
+		</foreach>
+	</select>
+	
+	<update id="updateCar" parameterType="com.yanzi.bean.Car">
+		update car set cmoney=#{cmoney},cstatus=#{cstatus} where gid=#{gid}
+	</update>
+
+</mapper>
