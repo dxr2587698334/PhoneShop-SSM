@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.yanzi.dao.OrdersDetailMapper">
+
+	<insert id="addOrdersDetail" parameterType="com.yanzi.bean.OrdersDetail">
+		insert into ordersdetail
+		(odnum,odmoney,odtotalmoney,odaddress,oid,gid)
+		values
+		(#{odnum},#{odmoney},#{odtotalmoney},#{odaddress},#{oid},#{gid})
+	</insert>
+	
+	<resultMap type="com.yanzi.bean.OdCustom" id="ordersDetailMap">
+		<result property="oid" column="oid" />
+		<result property="totalmoney" column="totalmoney" />
+		<result property="odaddress" column="odaddress" />
+		<result property="odstatus" column="odstatus" />
+	</resultMap>
+	
+	<select id="findAllOrdersDetail" resultMap="ordersDetailMap">
+		SELECT oid,SUM(odtotalmoney)totalmoney,odaddress,odstatus FROM ordersdetail GROUP BY oid
+	</select>
+	
+	<update id="updateOrdersDetail" parameterType="com.yanzi.bean.OrdersDetail">
+		update ordersdetail set odstatus =#{odstatus} where oid =#{oid}
+	</update>
+	
+	<select id="findUpdOrdersDetail" resultType="com.yanzi.bean.OrdersDetail" parameterType="string">
+		select * from ordersdetail where oid =#{oid}
+	</select>
+
+</mapper>
