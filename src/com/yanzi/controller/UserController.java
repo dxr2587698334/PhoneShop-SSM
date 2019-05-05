@@ -12,11 +12,11 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 
-import com.openlab.bean.Privilege;
-import com.openlab.bean.User;
-import com.openlab.service.IPrivilege;
-import com.openlab.service.IUser;
-import com.openlab.util.VerifyCode;
+import com.yanzi.bean.Privilege;
+import com.yanzi.bean.User;
+import com.yanzi.service.IPrivilege;
+import com.yanzi.service.IUser;
+import com.yanzi.util.VerifyCode;
 
 //标识这歌类是Controller
 @Controller
