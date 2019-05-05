@@ -9,11 +9,11 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 
-import com.openlab.bean.Car;
-import com.openlab.bean.Goods;
-import com.openlab.bean.User;
-import com.openlab.service.ICar;
-import com.openlab.service.IGoods;
+import com.yanzi.bean.Car;
+import com.yanzi.bean.Goods;
+import com.yanzi.bean.User;
+import com.yanzi.service.ICar;
+import com.yanzi.service.IGoods;
 
 @Controller
 @RequestMapping("/CarController")
