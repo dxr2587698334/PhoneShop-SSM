@@ -5,9 +5,9 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.openlab.bean.Goods;
-import com.openlab.dao.GoodsMapper;
-import com.openlab.util.Page;
+import com.yanzi.bean.Goods;
+import com.yanzi.dao.GoodsMapper;
+import com.yanzi.util.Page;
 
 @Service
 public class IGoodsImpl implements IGoods {
