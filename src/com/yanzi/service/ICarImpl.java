@@ -6,8 +6,8 @@ import org.apache.ibatis.annotations.Param;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.openlab.bean.Car;
-import com.openlab.dao.CarMapper;
+import com.yanzi.bean.Car;
+import com.yanzi.dao.CarMapper;
 
 @Service
 public class ICarImpl implements ICar {
