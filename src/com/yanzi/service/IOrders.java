@@ -2,7 +2,7 @@ package com.yanzi.service;
 
 import java.util.List;
 
-import com.openlab.bean.Orders;
+import com.yanzi.bean.Orders;
 
 public interface IOrders {
 	
