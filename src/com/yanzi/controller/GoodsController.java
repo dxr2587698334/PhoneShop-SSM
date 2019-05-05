@@ -7,9 +7,9 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
-import com.openlab.bean.Goods;
-import com.openlab.service.IGoods;
-import com.openlab.util.Page;
+import com.yanzi.bean.Goods;
+import com.yanzi.service.IGoods;
+import com.yanzi.util.Page;
 
 @Controller
 @RequestMapping("GoodsController")
