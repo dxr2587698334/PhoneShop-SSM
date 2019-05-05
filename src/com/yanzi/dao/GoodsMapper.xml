@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.yanzi.dao.GoodsMapper">
+
+	<select id="getCount" resultType="int">
+		SELECT COUNT(*) FROM goods;
+	</select>
+	
+	<select id="findGoodsLimit" resultType="com.yanzi.bean.Goods" parameterType="map">
+		SELECT * FROM goods LIMIT #{currentPage},#{pageSize}
+	</select>
+	
+	<select id="findByIdGoods" resultType="com.yanzi.bean.Goods" parameterType="int">
+		select * from goods where gid = #{gid}
+	</select>
+	
+	<update id="updateGoods" parameterType="com.yanzi.bean.Goods">
+		update goods set gmoney=#{gmoney},gstatus=#{gstatus} where gid=#{gid}
+	</update>
+	
+	<insert id="addGoods" parameterType="com.yanzi.bean.Goods">
+		insert into goods (gmoney,gname,gimage)
+		values
+		(#{gmoney},#{gname},#{gimage})
+	</insert>
+
+</mapper>
