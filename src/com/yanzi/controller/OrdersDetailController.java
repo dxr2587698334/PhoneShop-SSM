@@ -8,8 +8,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 
-import com.openlab.bean.OrdersDetail;
-import com.openlab.service.IOrdersDetail;
+import com.yanzi.bean.OrdersDetail;
+import com.yanzi.service.IOrdersDetail;
 
 @Controller
 @RequestMapping("/OrdersDetailController")
