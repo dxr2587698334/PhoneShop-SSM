@@ -16,22 +16,22 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.multipart.MultipartFile;
 
-import com.openlab.bean.Car;
-import com.openlab.bean.Goods;
-import com.openlab.bean.OdCustom;
-import com.openlab.bean.Pr;
-import com.openlab.bean.Privilege;
-import com.openlab.bean.Role;
-import com.openlab.bean.User;
-import com.openlab.service.ICar;
-import com.openlab.service.IGoods;
-import com.openlab.service.IOrders;
-import com.openlab.service.IOrdersDetail;
-import com.openlab.service.IPr;
-import com.openlab.service.IPrivilege;
-import com.openlab.service.IRole;
-import com.openlab.service.IUser;
-import com.openlab.util.Page;
+import com.yanzi.bean.Car;
+import com.yanzi.bean.Goods;
+import com.yanzi.bean.OdCustom;
+import com.yanzi.bean.Pr;
+import com.yanzi.bean.Privilege;
+import com.yanzi.bean.Role;
+import com.yanzi.bean.User;
+import com.yanzi.service.ICar;
+import com.yanzi.service.IGoods;
+import com.yanzi.service.IOrders;
+import com.yanzi.service.IOrdersDetail;
+import com.yanzi.service.IPr;
+import com.yanzi.service.IPrivilege;
+import com.yanzi.service.IRole;
+import com.yanzi.service.IUser;
+import com.yanzi.util.Page;
 
 @Controller
 @RequestMapping("/ManagerController")
