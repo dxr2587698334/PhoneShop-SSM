@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.yanzi.dao.UserMapper">
+
+	<!-- 登录 -->
+	<!-- 
+	public User login
+	(@Param("uid")String uid,@Param("uid")String upwd);
+	 -->
+	<select id="login" resultType="com.yanzi.bean.User" parameterType="string">
+		select * from user where uid=#{uid} and upwd =#{upwd}
+	</select>
+	
+	<resultMap type="com.yanzi.bean.User" id="userRole">
+		<result column="uid" property="uid" />
+		<result column="uname" property="uname" />
+		<association property="role" javaType="com.yanzi.bean.Role">
+			<result column="r_id" property="r_id"/>
+			<result column="r_name" property="r_name"/>
+		</association>
+	</resultMap>
+	
+	<!-- 查询所有用户（用户管理） -->
+	<select id="findAllUser" resultMap="userRole">
+		SELECT * FROM 
+		USER u,role r
+		WHERE u.role_rid = r.r_id
+	</select>
+	
+	<!-- 修改角色(查询单个用户) -->
+	<select id="findByIdUser" resultMap="userRole" parameterType="com.yanzi.bean.User">
+		SELECT * FROM 
+		USER u,role r
+		WHERE u.role_rid = r.r_id and uid=#{uid}
+	</select>
+	
+	<!-- 修改信息后的查询 -->
+	<select id="findByIdUser2" resultType="com.yanzi.bean.User" parameterType="string">
+		SELECT * FROM USER
+		WHERE uid=#{uid}
+	</select>
+	
+	<update id="updateUserRole" parameterType="com.yanzi.bean.User">
+		update user set role_rid=#{role_rid} where uid=#{uid}
+	</update>
+	
+	<update id="updateUserRole2" parameterType="com.yanzi.bean.User">
+		update user set role_rid=103 where role_rid=#{role_rid}
+	</update>
+	
+	<update id="updateUserInfo" parameterType="com.yanzi.bean.User">
+		update user set upwd=#{upwd},uphone=#{uphone},uaddress=#{uaddress} where uid=#{uid}
+	</update>
+	
+	<insert id="addUser" parameterType="com.yanzi.bean.User">
+		insert into user 
+		(uid,upwd,uname,uphone,uaddress)
+		values
+		(#{uid},#{upwd},#{uname},#{uphone},#{uaddress})
+	</insert>
+
+</mapper>
