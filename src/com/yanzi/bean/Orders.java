@@ -1,4 +1,4 @@
-package com.openlab.bean;
+package com.yanzi.bean;
 
 //订单表
 public class Orders {
