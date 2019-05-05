@@ -4,8 +4,8 @@ import java.util.List;
 
 import org.apache.ibatis.annotations.Param;
 
-import com.openlab.bean.OdCustom;
-import com.openlab.bean.OrdersDetail;
+import com.yanzi.bean.OdCustom;
+import com.yanzi.bean.OrdersDetail;
 
 public interface IOrdersDetail {
 	
