@@ -4,8 +4,8 @@ import java.util.List;
 
 import org.apache.ibatis.annotations.Param;
 
-import com.openlab.bean.Goods;
-import com.openlab.util.Page;
+import com.yanzi.bean.Goods;
+import com.yanzi.util.Page;
 
 public interface IGoods {
 
