@@ -8,15 +8,15 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 
-import com.openlab.bean.Car;
-import com.openlab.bean.Orders;
-import com.openlab.bean.OrdersDetail;
-import com.openlab.bean.User;
-import com.openlab.service.ICar;
-import com.openlab.service.IOrders;
-import com.openlab.service.IOrdersDetail;
-import com.openlab.util.CurrentTime;
-import com.openlab.util.IDutil;
+import com.yanzi.bean.Car;
+import com.yanzi.bean.Orders;
+import com.yanzi.bean.OrdersDetail;
+import com.yanzi.bean.User;
+import com.yanzi.service.ICar;
+import com.yanzi.service.IOrders;
+import com.yanzi.service.IOrdersDetail;
+import com.yanzi.util.CurrentTime;
+import com.yanzi.util.IDutil;
 
 @Controller
 @RequestMapping("/OrdersController")
