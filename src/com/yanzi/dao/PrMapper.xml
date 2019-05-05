@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.yanzi.dao.PrMapper">
+
+	<insert id="addPr" parameterType="com.yanzi.bean.Pr">
+		insert into pr
+		(r_id,p_id)
+		values
+		(#{r_id}, #{p_id})
+	</insert>
+	<!-- 
+	<foreach collection ="list" item="pr" separator =",">
+        	(#{pr.r_id}, #{pr.p_id})
+   	</foreach >
+ 	-->
+ 	
+ 	<update id="updatePr" parameterType="com.yanzi.bean.Pr">
+ 		update pr set p_id =#{p_id} where r_id=#{r_id}
+ 	</update>
+ 	
+ 	<!-- 删除原有的关系 -->
+ 	<delete id="delPr" parameterType="com.yanzi.bean.Pr">
+ 		delete from pr where r_id=#{r_id}
+ 	</delete>	
+ 	
+ 	<delete id="delBatchPr" parameterType="int">
+ 		delete from pr where r_id=#{r_id}
+ 	</delete>
+ 	
+</mapper>
